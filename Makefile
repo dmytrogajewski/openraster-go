@@ -1,4 +1,4 @@
-.PHONY: test build clean
+.PHONY: test build clean lint
 
 # Default target
 all: test build
@@ -34,7 +34,7 @@ fmt:
 # Run linter
 lint:
 	@echo "Running linter..."
-	@golangci-lint run
+	bin/golangci-lint run
 
 # Help target
 help:

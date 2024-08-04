@@ -3,6 +3,7 @@ package ora
 import (
 	"archive/zip"
 	"bytes"
+	"fmt"
 	"image"
 	"image/png"
 	"testing"
@@ -102,7 +103,11 @@ func createMockORA() []byte {
 </image>`
 
 	xmlFile, _ := zipWriter.Create("stack.xml")
-	xmlFile.Write([]byte(stackXML))
+	_, err := xmlFile.Write([]byte(stackXML))
+
+	if err != nil {
+		fmt.Print(err.Error())
+	}
 
 	// Create mock PNG files
 	createMockPNG(zipWriter, "data/layer1.png")
@@ -115,5 +120,9 @@ func createMockORA() []byte {
 func createMockPNG(zipWriter *zip.Writer, filename string) {
 	pngFile, _ := zipWriter.Create(filename)
 	img := image.NewRGBA(image.Rect(0, 0, 100, 100))
-	png.Encode(pngFile, img)
+	err := png.Encode(pngFile, img)
+
+	if err != nil {
+		fmt.Print(err.Error())
+	}
 }
