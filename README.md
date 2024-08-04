@@ -102,9 +102,37 @@ func main() {
 - **(i *Item) Opacity() float64**: Returns the opacity of the item
 - **(i *Item) Visible() bool**: Returns the visibility status of the item
 
+## Development
+
+### Prerequisites
+
+- Go 1.22 or later
+- Make (for using the Makefile)
+
+### Running Tests
+
+To run tests locally, use the following command:
+
+```sh
+make test
+```
+
+For more options, run:
+
+```sh
+make help
+```
+
+### Continuous Integration
+
+This project uses GitHub Actions for continuous integration. Two workflows are set up:
+
+1. **Run Tests**: Automatically runs tests on every push to the main branch and for all pull requests.
+2. **Release**: Runs tests and publishes the library to pkg.go.dev when a new release is created.
+
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+We welcome contributions! Please see the [CONTRIBUTING.md](CONTRIBUTING.md) file for guidelines on how to contribute.
 
 ## License
 
