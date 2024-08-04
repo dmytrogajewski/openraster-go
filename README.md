@@ -1,6 +1,6 @@
 # openraster-go
 
-openraster-go is a Go library for reading OpenRaster (ORA) files. OpenRaster is an open file format for storing layered raster graphics[1].
+openraster-go is a Go library for reading OpenRaster (ORA) files. OpenRaster is an open file format for storing layered raster graphics[1](https://www.openraster.org/).
 
 ## Features
 
